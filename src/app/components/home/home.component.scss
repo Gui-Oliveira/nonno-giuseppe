@@ -29,3 +29,32 @@
 .img-quem-somos {
   padding-bottom: 3rem;
 }
+
+@media (max-width: 900px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .text-limit {
+    &--text-right {
+      text-align: left;
+      max-width: 100%;
+      padding: 0rem;
+      margin-bottom: 5rem;
+    }
+  }
+
+  .img-header {
+    width: 20rem;
+    height: 20rem;
+    justify-content: center;
+  }
+
+  .img-quem-somos {
+    width: 20rem;
+  }
+}

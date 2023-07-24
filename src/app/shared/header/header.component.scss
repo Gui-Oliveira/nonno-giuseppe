@@ -1,41 +1,70 @@
 @import "../../../dist/scss/variables.scss";
 
+@media (max-width: 900px) {
+  .header {
+    padding: 0;
+    margin: 0;
+    
+    a {
+      display: none;
+    }
+
+    button {
+      margin: 0;
+      padding: 0;
+    }
+
+    &--logo {
+      margin: 0;
+      padding: 0;
+    }
+
+    &--title {
+      margin: 10px;
+      font-family: 'poppins', sans-serif;
+      font-weight: bold;
+      color: $primary-text-color;
+    }
+  }
+}
+
 .header {
-  display: flex;
-  align-items: center;
-  padding: 30px;
-  height: 60px;
+  padding: 40px 0;
+  background-color: #fafafa;
+
+  a {
+    margin-left: 40px;
+  }
+
+  button {
+    background: #fafafa;
+    border: none;
+    margin: 40px;
+    cursor: pointer;
+    width: 30px;
+  }
 
   &--logo {
-    width: 80px;
-    height: 80px;
-    margin: 0 30px;
+    width: 60px;
+    height: 60px;
+    margin-right: 50px;
 
     border-radius: 50px;
   }
 }
 
-.menu {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0px 400px 0px 300px;
-}
-
-.login {
-  width: 153px;
-  height: 46px;
-  flex-shrink: 0;
-
-  border-radius: 40px;
-  font-family: "Archivo", sans-serif;
-  color: $primary-text-color;
-  border: 2px solid var(--flame-scarlet, $primary-color);
-
-  cursor: pointer;
-}
-
 .destaque {
   color: $primary-text-color;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.mat-sidenav-content {
+  padding: 16px;
 }
