@@ -1,0 +1,68 @@
+@import "../../../dist/scss/variables.scss";
+
+.servicos {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+
+  &--sub-title {
+    display: flex;
+    justify-content: center;
+
+    font-size: 18px;
+  }
+}
+
+.servicos-row {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 0 100px 0 100px;
+}
+
+.card-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 0;
+
+  &--card {
+    border-radius: 24px;
+    background: var(--white, #fff);
+    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.25);
+
+    width: 295px;
+    height: 327px;
+    padding-bottom: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--card-text-title {
+    font-family: "poppins", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+  }
+
+  &--card-text-subtitle {
+    font-family: "archivo", sans-serif;
+    font-style: italic;
+    font-size: 14px;
+    font-weight: 400;
+    color: $primary-text-color;
+  }
+
+  &--card-text {
+    font-family: "archivo", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: $secondary-text-color;
+
+    text-align: center;
+  }
+}

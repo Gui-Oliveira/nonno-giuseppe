@@ -1,0 +1,76 @@
+<div class="row">
+  <div class="col contato">
+    <h1>contato</h1>
+  </div>
+  <div class="col">
+    <p class="contato--sub-title">
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text.
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <form [formGroup]="contatoForm" (ngSubmit)="enviarMensagem()" class="form">
+    <div class="row">
+      <div class="col form--col">
+        <p>
+          <mat-form-field appearance="fill" class="form--input">
+            <mat-label>Nome</mat-label>
+            <input matInput formControlName="nome" />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="fill" class="form--input">
+            <mat-label>E-mail</mat-label>
+            <input
+              matInput
+              formControlName="email"
+              placeholder="Ex: email@email.com"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col form--col">
+        <p>
+          <mat-form-field appearance="fill" class="form--input">
+            <mat-label>Estado</mat-label>
+            <input matInput formControlName="estado" placeholder="Ex: SP" />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="fill" class="form--input">
+            <mat-label>Cidade</mat-label>
+            <input
+              matInput
+              formControlName="cidade"
+              placeholder="Ex: São Paulo"
+            />
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col" style="display: flex; justify-content: center">
+        <mat-form-field class="form--textarea">
+          <mat-label>Escreva sua mensagem</mat-label>
+          <textarea
+            matInput
+            formControlName="mensagem"
+            style="resize: none"
+            rows="4"
+          ></textarea>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col button-enviar--container">
+        <button class="button-enviar" [disabled]="contatoForm.invalid">
+          Enviar
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

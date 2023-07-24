@@ -1,0 +1,41 @@
+@import "../../../dist/scss/variables.scss";
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  height: 60px;
+
+  &--logo {
+    width: 80px;
+    height: 80px;
+    margin: 0 30px;
+
+    border-radius: 50px;
+  }
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 400px 0px 300px;
+}
+
+.login {
+  width: 153px;
+  height: 46px;
+  flex-shrink: 0;
+
+  border-radius: 40px;
+  font-family: "Archivo", sans-serif;
+  color: $primary-text-color;
+  border: 2px solid var(--flame-scarlet, $primary-color);
+
+  cursor: pointer;
+}
+
+.destaque {
+  color: $primary-text-color;
+}

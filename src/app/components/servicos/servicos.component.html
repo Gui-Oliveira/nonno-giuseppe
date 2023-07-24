@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col servicos">
+    <h1>nossos serviços</h1>
+  </div>
+  <div class="col">
+    <p class="servicos--sub-title">
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has
+      roots in a piece of classical Latin literature from 45 BC, making it over
+      2000 years old.
+    </p>
+  </div>
+</div>
+
+<div class="row servicos-row" *ngFor="let row of servicosRows">
+  <div class="col-4" *ngFor="let item of row">
+    <div class="card-container">
+      <mat-card class="card-container--card">
+        <mat-card-title class="card-container--card-text-title">
+          {{ item.titulo }}
+        </mat-card-title>
+        <mat-card-subtitle class="card-container--card-text-subtitle">
+          {{ item.subtitulo }}
+        </mat-card-subtitle>
+        <mat-card-content class="card-container--card-text">
+          <p>{{ item.texto }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

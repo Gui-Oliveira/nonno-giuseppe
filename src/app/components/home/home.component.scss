@@ -1,0 +1,31 @@
+.text-limit {
+  max-width: 100%;
+
+  &--text-right {
+    text-align: right;
+    max-width: 70%;
+
+    padding-left: 10rem;
+  }
+}
+
+.img-header {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.quem-somos {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0rem 3rem 0rem;
+}
+
+.img-quem-somos {
+  padding-bottom: 3rem;
+}

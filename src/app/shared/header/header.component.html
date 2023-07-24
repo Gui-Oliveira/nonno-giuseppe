@@ -1,0 +1,32 @@
+<div class="row header">
+  <a
+    routerLink=""
+    [ngClass]="{ destaque: botaoAtivo === '/' }"
+    (click)="marcarBotao('/')"
+  >
+    <img
+      src="../../../assets/imgs/logo__nonno-giuseppe.png"
+      class="header--logo"
+    />
+  </a>
+  <div class="col-md-12 menu">
+    <a
+      routerLink=""
+      [ngClass]="{ destaque: botaoAtivo === '/' }"
+      (click)="marcarBotao('/')"
+      >Home</a
+    >
+    <a
+      routerLink="servicos"
+      [ngClass]="{ destaque: botaoAtivo === '/servicos' }"
+      (click)="marcarBotao('/servicos')"
+      >Serviços</a
+    >
+    <a
+      routerLink="contato"
+      [ngClass]="{ destaque: botaoAtivo === '/contato' }"
+      (click)="marcarBotao('/contato')"
+      >Contato</a
+    >
+  </div>
+</div>

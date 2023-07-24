@@ -1,0 +1,16 @@
+@import '../../../dist/scss/variables.scss';
+
+.footer {
+  background-color: $secondary-background-color;
+  padding: 4rem;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+span {
+    font-family: 'Poppins', sans-serif;
+    color: $secondary-text-color;
+    font-size: 18px;
+}

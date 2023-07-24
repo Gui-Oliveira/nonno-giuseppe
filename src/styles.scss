@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./dist/scss/variables.scss";
+@import "normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;700&family=Poppins:wght@100;200;300;400;700&display=swap');
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+body {
+  background: $primary-background-color;
+}
+
+a {
+  font-family: "archivo", sans-serif;
+  color: $secondary-text-color;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $primary-text-color;
+}
+
+p,
+h3 {
+  font-family: "archivo", sans-serif;
+  color: $secondary-text-color;
+  font-weight: 400;
+}
+
+h1 {
+  font-family: "poppins", sans-serif;
+  color: $primary-text-color;
+  text-transform: uppercase;
+  font-weight: 700;
+}
