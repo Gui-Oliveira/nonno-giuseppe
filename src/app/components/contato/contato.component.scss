@@ -44,7 +44,7 @@
   background-color: $primary-color;
   color: #fafafa;
 
-  font-family: 'archivo', sans-serif;
+  font-family: "archivo", sans-serif;
   font-size: 18px;
   font-weight: 700;
 
@@ -57,5 +57,54 @@
     justify-content: end;
 
     padding: 0 8rem 3rem 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0;
+  }
+
+  .form {
+    &--col {
+      flex-direction: column;
+    }
+
+    &--input {
+      width: 100%;
+    }
+
+    &--textarea {
+      width: 100%;
+    }
+
+    &--container {
+      padding: 0;
+    }
+  }
+
+  .button-enviar {
+    width: 70%;
+    margin-bottom: 70px;
+
+    border: none;
+    border-radius: 40px;
+    background-color: $primary-color;
+    color: #fafafa;
+
+    font-family: "archivo", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+
+    &:hover {
+      background-color: $primary-color-dark;
+    }
+
+    &--container {
+      display: flex;
+      justify-content: center;
+
+      padding: 0;
+    }
   }
 }
