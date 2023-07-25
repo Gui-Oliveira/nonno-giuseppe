@@ -25,6 +25,12 @@
     >Serviços</a
   >
   <a
+    routerLink="pesquise"
+    [ngClass]="{ destaque: botaoAtivo === '/pesquise' }"
+    (click)="marcarBotao('/pesquise')"
+    >Pesquise</a
+  >
+  <a
     routerLink="contato"
     [ngClass]="{ destaque: botaoAtivo === '/contato' }"
     (click)="marcarBotao('/contato')"

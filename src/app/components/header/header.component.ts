@@ -12,6 +12,7 @@ export class HeaderComponent {
   menuHeader = [
     { link: '/', nome: 'Home' },
     { link: '/servicos', nome: 'Serviços' },
+    { link: '/pesquise', nome: 'Pesquise' },
     { link: '/contato', nome: 'Contato' },
   ];
 

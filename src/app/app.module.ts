@@ -12,14 +12,20 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 import { AppComponent } from './app.component';
-import { ServicosComponent } from './components/servicos/servicos.component';
-import { ContatoComponent } from './components/contato/contato.component';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { ObrigadoComponent } from './components/contato/obrigado/obrigado.component';
-import { BottomMenuComponent } from './shared/bottom-menu/bottom-menu.component';
+import { BottomMenuComponent } from './components/bottom-menu/bottom-menu.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ContatoComponent } from './views/contato/contato.component';
+import { ObrigadoComponent } from './views/contato/obrigado/obrigado.component';
+import { PesquisaComponent } from './views/pesquisa/pesquisa.component';
+import { TabelaPesquisaComponent } from './views/pesquisa/tabela-pesquisa/tabela-pesquisa.component';
+import { ServicosComponent } from './views/servicos/servicos.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +36,8 @@ import { BottomMenuComponent } from './shared/bottom-menu/bottom-menu.component'
     FooterComponent,
     ObrigadoComponent,
     BottomMenuComponent,
+    PesquisaComponent,
+    TabelaPesquisaComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,10 @@ import { BottomMenuComponent } from './shared/bottom-menu/bottom-menu.component'
     MatIconModule,
     MatSidenavModule,
     FlexLayoutModule,
-    LayoutModule
+    LayoutModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent],
