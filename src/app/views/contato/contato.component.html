@@ -21,7 +21,7 @@
         <p>
           <mat-form-field appearance="fill" class="form--input">
             <mat-label>Nome</mat-label>
-            <input matInput formControlName="nome" />
+            <input matInput formControlName="nome" type="text"/>
           </mat-form-field>
         </p>
         <p>
@@ -30,6 +30,7 @@
             <input
               matInput
               formControlName="email"
+              type="email"
               placeholder="Ex: email@email.com"
             />
           </mat-form-field>
@@ -44,6 +45,7 @@
             <input
               matInput
               formControlName="telefone"
+              type="tel"
               placeholder="Ex: (00) 00000-0000"
             />
           </mat-form-field>
@@ -51,7 +53,11 @@
         <p>
           <mat-form-field appearance="fill" class="form--input">
             <mat-label>Assunto</mat-label>
-            <input matInput formControlName="assunto" />
+            <input
+              matInput
+              formControlName="assunto"
+              type="text"
+            />
           </mat-form-field>
         </p>
       </div>
@@ -65,6 +71,7 @@
             formControlName="mensagem"
             style="resize: none"
             rows="4"
+            type="text"
           ></textarea>
         </mat-form-field>
       </div>
@@ -77,6 +84,7 @@
             <input
               formControlName="anexo"
               type="file"
+              accept=".pdf, .doc, .docx, .jpg, .jpeg, .png"
               (change)="onFileSelected($event)"
               multiple
             />
@@ -96,7 +104,11 @@
         </div>
       </div>
       <div class="col" style="display: flex; justify-content: end">
-        <button class="button-enviar" [disabled]="contatoForm.invalid">
+        <button
+          class="button-enviar"
+          [disabled]="contatoForm.invalid"
+          type="submit"
+        >
           Enviar
         </button>
       </div>
