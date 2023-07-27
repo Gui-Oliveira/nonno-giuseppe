@@ -12,11 +12,13 @@ import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { ContatoComponent } from './contato/contato.component';
 import { ObrigadoComponent } from './contato/obrigado/obrigado.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { ServicosComponent } from './servicos/servicos.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -40,7 +42,9 @@ import { ServicosComponent } from './servicos/servicos.component';
     MatSortModule,
     FormsModule,
     NgxPaginationModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatIconModule
   ]
 })
 export class ViewsModule { }

@@ -8,21 +8,14 @@
       história de sua família. Nosso time de especialistas aguarda pelas
       informações para iniciar as pesquisas. <br /><br />
       Utilize o quadro “Mensagem” abaixo, para descrever o máximo possível de
-      informações que já possua e não esqueça de nos encaminhar (via e-mail ou
-      whatsapp) ao menos um documento de seu antenato.
+      informações que já possua e não esqueça de nos encaminhar ao menos um
+      documento de seu antenato.
     </p>
   </div>
 </div>
 
 <div class="container">
   <form [formGroup]="contatoForm" (ngSubmit)="enviarMensagem()" class="form">
-<!-- 
-    <div class="row">
-      <div class="col">
-        <a href="https://wa.me/5511932550701?text=Como%20posso%20ajudar%3F">Teste</a>
-      </div>
-    </div> -->
-
     <div class="row">
       <div class="col form--col">
         <p>
@@ -44,20 +37,21 @@
       </div>
     </div>
     <div class="row">
-      <div class="col form--col" style="margin-top: 0;">
+      <div class="col form--col" style="margin-top: 0">
         <p>
           <mat-form-field appearance="fill" class="form--input">
             <mat-label>Telefone</mat-label>
-            <input matInput formControlName="telefone" placeholder="Ex: (00) 00000-0000" />
+            <input
+              matInput
+              formControlName="telefone"
+              placeholder="Ex: (00) 00000-0000"
+            />
           </mat-form-field>
         </p>
         <p>
           <mat-form-field appearance="fill" class="form--input">
             <mat-label>Assunto</mat-label>
-            <input
-              matInput
-              formControlName="assunto"
-            />
+            <input matInput formControlName="assunto" />
           </mat-form-field>
         </p>
       </div>
@@ -75,8 +69,33 @@
         </mat-form-field>
       </div>
     </div>
-    <div class="row">
-      <div class="col button-enviar--container">
+    <div class="row button-enviar--container">
+      <div class="col">
+        <div>
+          <label>
+            Anexar arquivo
+            <input
+              formControlName="anexo"
+              type="file"
+              (change)="onFileSelected($event)"
+              multiple
+            />
+          </label>
+        </div>
+        <div *ngIf="selectedFile.length > 0">
+          <h4>Arquivos Selecionados:</h4>
+          <ul>
+            <li *ngFor="let file of selectedFile">
+              {{ file.name }}
+              <mat-icon fontIcon="delete" (click)="deleteFile(file)"></mat-icon>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="selectedFile.length > 0">
+          <p>Quantidade de arquivos anexados: {{ selectedFile.length }}</p>
+        </div>
+      </div>
+      <div class="col" style="display: flex; justify-content: end">
         <button class="button-enviar" [disabled]="contatoForm.invalid">
           Enviar
         </button>

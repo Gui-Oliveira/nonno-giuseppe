@@ -1,3 +1,5 @@
+@import '../../../dist/scss/variables.scss';
+
 .text-limit {
   max-width: 100%;
 
@@ -30,7 +32,27 @@
   padding-bottom: 48px;
 }
 
+h3 {
+  font-style: italic;
+}
+
 @media (max-width: 900px) {
+  .title {
+    display: none;
+  }
+
+  h3 {
+    font-style: normal;
+    font-family: 'poppins', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    text-transform: uppercase;
+    color: $primary-text-color;
+
+    display: flex;
+    justify-content: center;
+  }
+
   .container {
     display: flex;
     flex-direction: column;
@@ -51,6 +73,7 @@
   .img-header {
     width: 320px;
     height: 320px;
+    margin-top: 16px;
     justify-content: center;
   }
 
