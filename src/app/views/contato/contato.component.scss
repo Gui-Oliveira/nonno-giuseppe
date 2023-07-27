@@ -10,6 +10,8 @@
   &--sub-title {
     display: flex;
     justify-content: center;
+    text-align: center;
+    margin: 0 40px 16px 40px;
 
     font-size: 18px;
   }
@@ -22,32 +24,32 @@
     display: flex;
     justify-content: space-around;
 
-    margin-top: 16px;
+    margin-top: 32px;
   }
 
   &--input {
-    width: 20rem;
+    width: 264px;
   }
 
   &--textarea {
-    width: 58rem;
-    height: 10rem;
+    width: 864px;
+    height: 160px;
 
-    padding-bottom: 3rem;
+    padding-bottom: 48px;
   }
 }
 
 .button-enviar {
-  width: 10rem;
-  height: 3rem;
+  width: 160px;
+  height: 48px;
 
   border: none;
-  border-radius: 40px;
+  border-radius: 24px;
   background-color: $primary-color;
   color: #fafafa;
 
   font-family: "archivo", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
 
   &:hover {
@@ -58,7 +60,7 @@
     display: flex;
     justify-content: end;
 
-    padding: 0 8rem 3rem 0;
+    padding: 0 128px 48px 0;
   }
 }
 
@@ -87,7 +89,7 @@
 
   .button-enviar {
     width: 70%;
-    margin-bottom: 70px;
+    margin-bottom: 72px;
 
     border: none;
     border-radius: 40px;
@@ -95,7 +97,7 @@
     color: #fafafa;
 
     font-family: "archivo", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
 
     &:hover {

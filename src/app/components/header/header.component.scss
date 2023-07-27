@@ -20,7 +20,7 @@
     }
 
     &--title {
-      margin: 10px;
+      margin: 16px;
       font-family: 'poppins', sans-serif;
       font-weight: bold;
       color: $primary-text-color;
@@ -41,15 +41,14 @@
     border: none;
     margin: 40px;
     cursor: pointer;
-    width: 30px;
+    width: 32px;
   }
 
   &--logo {
-    width: 60px;
-    height: 60px;
-    margin-right: 50px;
+    width: 64px;
+    height: 64px;
 
-    border-radius: 50px;
+    border-radius: 32px;
   }
 }
 

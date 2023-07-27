@@ -16,40 +16,43 @@ export class ServicosComponent implements OnInit {
   ngOnInit() {
     this.servicos = [
       {
-        titulo: 'What is Lorem Ipsum?',
-        subtitulo: 'Where does it come from?',
-        texto: `Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
-      When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.`,
+        titulo: 'PESQUISAS',
+        subtitulo: '',
+        texto: `Oferecemos um serviço de pesquisa ideal para quem busca informações sobre antepassados, mesmo com dados não concretos, como a naturalidade na Itália. Nosso objetivo é encontrar o local exato de registro de nascimento para emissão do 'Estratto di Nascità'. Quanto mais informações oficiais em documentos, mais efetiva será a pesquisa. Aceitamos solicitações via e-mail PEC, se necessário.`,
       },
       {
-        titulo: 'What is Lorem Ipsum?',
-        subtitulo: 'Where does it come from?',
-        texto: `Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
-      When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.`,
+        titulo: 'ATUALIZAÇÃO DE DOCUMENTO (BUSCA)',
+        subtitulo: '',
+        texto: `Já tem uma cópia do documento de seu antepassado e precisa de uma atualização, podemos te ajudar.
+        O serviço de busca é o serviço ideal para quem já tem uma cópia do livro de registro do “atto di nascità o matrimonio” de seu antepassado ou até mesmo uma via antiga do “estratto di nascità”.
+        Efetuamos as ligações aos órgãos competentes para emissão do novo documento e acompanhamos a emissão para retirada do documento original.`,
       },
       {
-        titulo: 'What is Lorem Ipsum?',
-        subtitulo: 'Where does it come from?',
-        texto: `Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
-      When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.`,
+        titulo: 'APOSTILAMENTO',
+        subtitulo: '',
+        texto: `Em sua pasta documental, existe alguma divergência de informações? Precisa corrigir algum documento no Brasil? Podemos te ajudar.
+        Todo documento italiano para ser válido em território brasileiro, precisa de uma ‘certificação’, esta validação é chamada de Apostilamento. O apostilamento é a autenticação da assinatura do Oficial que assinou o documento e dando validade para uso no exterior.
+        Esta autenticação é sempre feita na Prefeitura da Província.`,
       },
       {
-        titulo: 'What is Lorem Ipsum?',
-        subtitulo: 'Where does it come from?',
-        texto: `Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
-      When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.`,
+        titulo: 'TRANSCRIÇÃO DE ATO',
+        subtitulo: '',
+        texto: `Já teve a cidadania italiana reconhecida via judicial? Nós podemos solicitar seus documentos transcritos.
+        Após o reconhecimento de cidadania, por via judicial, será necessário entrar em contato com o comune, onde nasceu seu antenato, para solicitar a transcrição do seu ato.`,
       },
       {
-        titulo: 'What is Lorem Ipsum?',
-        subtitulo: 'Where does it come from?',
-        texto: `Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
-      When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.`,
+        titulo: 'MONTAGEM DA PASTA COMPLETA',
+        subtitulo: '',
+        texto: `Caso precise de apoio profissional para deixar sua pasta documental pronta para entrar com o pedido de reconhecimento de cidadania, nós podemos fazer por você.
+        Nós realizamos as pesquisas, emissões, apostilamentos e a tradução de todos os documentos brasileiros aqui na Itália com nossa tradutora parceira.
+        Ao nos contatar, diga que tem interesse em montar sua pasta documental, que nós temos condições especiais.`,
       },
       {
-        titulo: 'What is Lorem Ipsum?',
-        subtitulo: 'Where does it come from?',
-        texto: `Lorem Ipsum is simply dummy text of the printing. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s.
-      When an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.`,
+        titulo: 'PESQUISA BR',
+        subtitulo: '',
+        texto: `Podemos auxiliar nossos clientes em pesquisas nos cartórios do Brasil.
+        Por termos vasta experiência e por gostarmos de estar envolvido na história de nossos clientes, podemos auxiliar nas pesquisas Brasil.
+        Temos Certificado Digital para solicitação de certidões em inteiro teor nos cartórios brasileiros.`,
       },
     ];
 

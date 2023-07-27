@@ -5,7 +5,7 @@
     text-align: right;
     max-width: 70%;
 
-    padding-left: 10rem;
+    padding-left: 160px;
   }
 }
 
@@ -23,11 +23,11 @@
 
   display: flex;
   justify-content: center;
-  padding: 3rem 0rem 3rem 0rem;
+  padding: 48px 0 48px 0;
 }
 
 .img-quem-somos {
-  padding-bottom: 3rem;
+  padding-bottom: 48px;
 }
 
 @media (max-width: 900px) {
@@ -43,18 +43,18 @@
     &--text-right {
       text-align: left;
       max-width: 100%;
-      padding: 0rem;
-      margin-bottom: 5rem;
+      padding: 0;
+      margin-bottom: 80px;
     }
   }
 
   .img-header {
-    width: 20rem;
-    height: 20rem;
+    width: 320px;
+    height: 320px;
     justify-content: center;
   }
 
   .img-quem-somos {
-    width: 20rem;
+    width: 320px;
   }
 }

@@ -10,8 +10,8 @@ export class ContatoComponent {
   public contatoForm: FormGroup = this.formBuilder.group({
     nome: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
-    estado: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(2)]],
-    cidade: ['', [Validators.required, Validators.minLength(2)]],
+    telefone: ['', [Validators.required, Validators.minLength(10)]],
+    assunto: ['', [Validators.required, Validators.minLength(2)]],
     mensagem: ['', [Validators.required, Validators.minLength(10)]],
   });
 

@@ -10,6 +10,7 @@
   &--sub-title {
     display: flex;
     justify-content: center;
+    margin: 0;
 
     font-size: 18px;
   }
@@ -19,23 +20,23 @@
   display: flex;
   justify-content: space-between;
 
-  padding: 0 100px;
+  padding: 8px 104px;
 }
 
 .card-container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 3rem 0;
+  padding: 48px 0;
 
   &--card {
     border-radius: 24px;
-    background: var(--white, #fff);
+    background: #fff;
     box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.25);
 
-    width: 295px;
-    height: 327px;
-    padding-bottom: 3rem;
+    width: 312px;
+    height: 320px;
+    padding-bottom: 48px;
 
     display: flex;
     justify-content: center;
@@ -44,17 +45,12 @@
 
   &--card-text-title {
     font-family: "poppins", sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
-    color: #000;
-  }
-
-  &--card-text-subtitle {
-    font-family: "archivo", sans-serif;
-    font-style: italic;
-    font-size: 14px;
-    font-weight: 400;
     color: $primary-text-color;
+    text-align: center;
+
+    padding-top: 32px;
   }
 
   &--card-text {
@@ -75,15 +71,14 @@
 
   .servicos {
     &--sub-title {
-      text-align: left;
       max-width: 100%;
       padding: 0rem;
-      margin-bottom: 27px;
+      margin-bottom: 32px;
+      text-align: center;
     }
   }
 
   .card-container {
-    padding: 10px 0 70px 0;
+    padding: 8px 0 72px 0;
   }
-
 }
