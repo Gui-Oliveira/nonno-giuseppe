@@ -7,7 +7,7 @@ import { throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class ContatoService {
-  private backendUrl = 'http://localhost:3000';
+  private backendUrl = 'https://email-nonno-giuseppe.onrender.com';
 
   constructor(private http: HttpClient) {}
 
