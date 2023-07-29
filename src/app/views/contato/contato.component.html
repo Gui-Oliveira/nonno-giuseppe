@@ -15,51 +15,39 @@
 </div>
 
 <div class="container">
-  <form [formGroup]="contatoForm" (ngSubmit)="enviarMensagem()" class="form">
+  <form [formGroup]="contatoForm" (ngSubmit)="enviarMensagem()" class="form" enctype="multipart/form-data">
     <div class="row">
       <div class="col form--col">
-        <p>
-          <mat-form-field appearance="fill" class="form--input">
-            <mat-label>Nome</mat-label>
-            <input matInput formControlName="nome" type="text"/>
-          </mat-form-field>
-        </p>
-        <p>
-          <mat-form-field appearance="fill" class="form--input">
-            <mat-label>E-mail</mat-label>
-            <input
-              matInput
-              formControlName="email"
-              type="email"
-              placeholder="Ex: email@email.com"
-            />
-          </mat-form-field>
-        </p>
+        <mat-form-field appearance="fill" class="form--input">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome" type="text" />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form--input">
+          <mat-label>E-mail</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            type="email"
+            placeholder="Ex: email@email.com"
+          />
+        </mat-form-field>
       </div>
     </div>
     <div class="row">
       <div class="col form--col" style="margin-top: 0">
-        <p>
-          <mat-form-field appearance="fill" class="form--input">
-            <mat-label>Telefone</mat-label>
-            <input
-              matInput
-              formControlName="telefone"
-              type="tel"
-              placeholder="Ex: (00) 00000-0000"
-            />
-          </mat-form-field>
-        </p>
-        <p>
-          <mat-form-field appearance="fill" class="form--input">
-            <mat-label>Assunto</mat-label>
-            <input
-              matInput
-              formControlName="assunto"
-              type="text"
-            />
-          </mat-form-field>
-        </p>
+        <mat-form-field appearance="fill" class="form--input">
+          <mat-label>Telefone</mat-label>
+          <input
+            matInput
+            formControlName="telefone"
+            type="tel"
+            placeholder="Ex: (00) 00000-0000"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="form--input">
+          <mat-label>Assunto</mat-label>
+          <input matInput formControlName="assunto" type="text" />
+        </mat-form-field>
       </div>
     </div>
     <div class="row">
@@ -82,26 +70,26 @@
           <label>
             Anexar arquivo
             <input
-              formControlName="anexo"
               type="file"
               accept=".pdf, .doc, .docx, .jpg, .jpeg, .png"
               (change)="onFileSelected($event)"
               multiple
+              name="anexos"
             />
           </label>
         </div>
-        <div *ngIf="selectedFile.length > 0">
+        <!-- <div *ngIf="arquivosSelecionados.length > 0">
           <h4>Arquivos Selecionados:</h4>
           <ul>
-            <li *ngFor="let file of selectedFile">
+            <li *ngFor="let file of arquivosSelecionados">
               {{ file.name }}
               <mat-icon fontIcon="delete" (click)="deleteFile(file)"></mat-icon>
             </li>
           </ul>
         </div>
-        <div *ngIf="selectedFile.length > 0">
-          <p>Quantidade de arquivos anexados: {{ selectedFile.length }}</p>
-        </div>
+        <div *ngIf="arquivosSelecionados.length > 0">
+          <p>Quantidade de arquivos anexados: {{ arquivosSelecionados.length }}</p>
+        </div> -->
       </div>
       <div class="col" style="display: flex; justify-content: end">
         <button

@@ -8,12 +8,7 @@ import { ViewsModule } from './views/views.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ComponentsModule,
-    ViewsModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, ComponentsModule, ViewsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

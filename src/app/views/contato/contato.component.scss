@@ -29,6 +29,7 @@
 
   &--input {
     width: 264px;
+    height: 80px;
   }
 
   &--textarea {
@@ -89,8 +90,9 @@ label {
   }
 }
 
-h4, li {
-  font-family: 'poppins', sans-serif;
+h4,
+li {
+  font-family: "poppins", sans-serif;
 
   display: flex;
   justify-content: space-between;

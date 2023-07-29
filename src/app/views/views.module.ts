@@ -13,12 +13,14 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ContatoComponent } from './contato/contato.component';
 import { ObrigadoComponent } from './contato/obrigado/obrigado.component';
 import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { ServicosComponent } from './servicos/servicos.component';
 import { MatIconModule } from '@angular/material/icon';
+import { ContatoService } from './contato/contato.service';
 
 
 
@@ -32,6 +34,7 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     AppRoutingModule,
     CommonModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatPaginatorModule,
@@ -45,6 +48,9 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatIconModule
-  ]
+  ],
+  providers: [
+    ContatoService
+  ],
 })
 export class ViewsModule { }
