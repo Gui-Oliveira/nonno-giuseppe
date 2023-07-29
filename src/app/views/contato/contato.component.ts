@@ -1,6 +1,7 @@
 import { ContatoService } from './contato.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-contato',
@@ -10,6 +11,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ContatoComponent {
   arquivosSelecionados!: FileList;
   arquivosSelecionadosArray: File[] = [];
+
+  enviandoEmail = false;
+  emailEnviado = false;
 
   public contatoForm: FormGroup = this.formBuilder.group({
     nome: ['', [Validators.required, Validators.minLength(3)]],
@@ -22,7 +26,8 @@ export class ContatoComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private contatoService: ContatoService
+    private contatoService: ContatoService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -31,31 +36,51 @@ export class ContatoComponent {
 
   enviarMensagem() {
     if (this.contatoForm.invalid) {
-      alert('Preencha todos os campos corretamente!');
-    } else {
-      console.log(this.contatoForm.value);
-      alert('Mensagem enviada com sucesso!');
-      this.contatoForm.reset();
-    }
-
-    if (this.contatoForm.invalid) {
       return;
     }
 
     const dadosFormulario = this.contatoForm.value;
+    this.enviandoEmail = true;
+
     this.contatoService
       .enviarEmail(dadosFormulario, this.arquivosSelecionados)
-      .subscribe(
-        () => {
+      .subscribe({
+        next: () => {
+          this.enviandoEmail = false;
+          this.emailEnviado = true;
           this.contatoForm.reset();
-          alert('Mensagem enviada com sucesso!');
+          this.arquivosSelecionadosArray = [];
+          this.contatoForm.get('anexos')?.setValue(''); 
+
+          Object.keys(this.contatoForm.controls).forEach((key: string) => {
+            this.contatoForm.get(key)?.clearValidators();
+            this.contatoForm.get(key)?.updateValueAndValidity();
+          });
+
+          this.contatoForm.markAsPristine();
+          this.contatoForm.markAsUntouched();
+
+          const config: MatSnackBarConfig = {
+            duration: 5000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+          };
+          this.snackBar.open('Mensagem enviada com sucesso!', 'Fechar', config);
         },
-        (error) => {
-          alert(
-            'Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.'
+        error: (error) => {
+          this.enviandoEmail = false;
+          const config: MatSnackBarConfig = {
+            duration: 5000,
+            verticalPosition: 'top',
+            horizontalPosition: 'center',
+          };
+          this.snackBar.open(
+            'Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.',
+            'Fechar',
+            config
           );
-        }
-      );
+        },
+      });
   }
 
   public onFileSelected(event: any) {

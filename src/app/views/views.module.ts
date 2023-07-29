@@ -21,8 +21,8 @@ import { PesquisaComponent } from './pesquisa/pesquisa.component';
 import { ServicosComponent } from './servicos/servicos.component';
 import { MatIconModule } from '@angular/material/icon';
 import { ContatoService } from './contato/contato.service';
-
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -47,10 +47,10 @@ import { ContatoService } from './contato/contato.service';
     NgxPaginationModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatIconModule
+    MatIconModule,
+    MatSnackBarModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [
-    ContatoService
-  ],
+  providers: [ContatoService],
 })
-export class ViewsModule { }
+export class ViewsModule {}
