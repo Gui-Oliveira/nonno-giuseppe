@@ -21,7 +21,7 @@ export class ContatoComponent {
     telefone: ['', [Validators.required, Validators.minLength(10)]],
     assunto: ['', [Validators.required, Validators.minLength(2)]],
     mensagem: ['', [Validators.required, Validators.minLength(10)]],
-    anexos: [''],
+    anexos: ['', [Validators.required]],
   });
 
   constructor(
