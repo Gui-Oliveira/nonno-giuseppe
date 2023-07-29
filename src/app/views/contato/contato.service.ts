@@ -29,7 +29,7 @@ export class ContatoService {
     return this.http
       .post(`${this.backendUrl}/enviar-email`, formData, { headers })
       .pipe(
-        map((response: any) => response), // Ajuste a manipulação da resposta conforme sua necessidade
+        map((response: any) => response),
         catchError((error) => {
           console.error(error);
           return throwError(

@@ -15,7 +15,12 @@
 </div>
 
 <div class="container">
-  <form [formGroup]="contatoForm" (ngSubmit)="enviarMensagem()" class="form" enctype="multipart/form-data">
+  <form
+    [formGroup]="contatoForm"
+    (ngSubmit)="enviarMensagem()"
+    class="form"
+    enctype="multipart/form-data"
+  >
     <div class="row">
       <div class="col form--col">
         <mat-form-field appearance="fill" class="form--input">
@@ -78,18 +83,26 @@
             />
           </label>
         </div>
-        <!-- <div *ngIf="arquivosSelecionados.length > 0">
+        <div *ngIf="arquivosSelecionadosArray.length > 0">
           <h4>Arquivos Selecionados:</h4>
           <ul>
-            <li *ngFor="let file of arquivosSelecionados">
+            <li
+              *ngFor="let file of arquivosSelecionadosArray; let index = index"
+            >
               {{ file.name }}
-              <mat-icon fontIcon="delete" (click)="deleteFile(file)"></mat-icon>
+              <mat-icon
+                fontIcon="delete"
+                (click)="deleteFile(index)"
+              ></mat-icon>
             </li>
           </ul>
         </div>
-        <div *ngIf="arquivosSelecionados.length > 0">
-          <p>Quantidade de arquivos anexados: {{ arquivosSelecionados.length }}</p>
-        </div> -->
+        <div *ngIf="arquivosSelecionadosArray.length > 0">
+          <p>
+            Quantidade de arquivos anexados:
+            {{ arquivosSelecionadosArray.length }}
+          </p>
+        </div>
       </div>
       <div class="col" style="display: flex; justify-content: end">
         <button

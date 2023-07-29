@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContatoComponent {
   arquivosSelecionados!: FileList;
+  arquivosSelecionadosArray: File[] = [];
 
   public contatoForm: FormGroup = this.formBuilder.group({
     nome: ['', [Validators.required, Validators.minLength(3)]],
@@ -30,6 +31,14 @@ export class ContatoComponent {
 
   enviarMensagem() {
     if (this.contatoForm.invalid) {
+      alert('Preencha todos os campos corretamente!');
+    } else {
+      console.log(this.contatoForm.value);
+      alert('Mensagem enviada com sucesso!');
+      this.contatoForm.reset();
+    }
+
+    if (this.contatoForm.invalid) {
       return;
     }
 
@@ -38,12 +47,10 @@ export class ContatoComponent {
       .enviarEmail(dadosFormulario, this.arquivosSelecionados)
       .subscribe(
         () => {
-          console.log(this.contatoForm.value);
           this.contatoForm.reset();
           alert('Mensagem enviada com sucesso!');
         },
         (error) => {
-          console.error(this.contatoForm.value, error);
           alert(
             'Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.'
           );
@@ -53,9 +60,29 @@ export class ContatoComponent {
 
   public onFileSelected(event: any) {
     this.arquivosSelecionados = event.target.files;
+    this.arquivosSelecionadosArray = Array.from(event.target.files);
   }
 
-  // public deleteFile(file: File) {
-  //   this.arquivosSelecionados = this.arquivosSelecionados.filter((f) => f.name !== file.name);
-  // }
+  public deleteFile(index: number) {
+    if (this.arquivosSelecionados) {
+      const updatedFiles: File[] = Array.from(this.arquivosSelecionados);
+      updatedFiles.splice(index, 1);
+      this.arquivosSelecionadosArray = updatedFiles;
+      this.arquivosSelecionados = this.convertArrayToFileList(updatedFiles);
+    }
+  }
+
+  private convertArrayToFileList(files: File[]): FileList {
+    const dataTransfer = new DataTransfer();
+    for (const file of files) {
+      dataTransfer.items.add(file);
+    }
+    return dataTransfer.files;
+  }
+
+  public getIndexes() {
+    return this.arquivosSelecionados
+      ? Array.from({ length: this.arquivosSelecionados.length }, (_, i) => i)
+      : [];
+  }
 }
