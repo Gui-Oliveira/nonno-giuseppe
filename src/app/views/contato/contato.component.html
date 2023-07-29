@@ -104,17 +104,18 @@
           </p>
         </div>
       </div>
-      <div class="loader-overlay" [class.hidden]="!enviandoEmail">
-        <div class="loader">
+      <div class="col" style="display: flex; justify-content: end">
+        <div class="loader-overlay" [class.hidden]="!enviandoEmail">
+          <div class="loader"></div>
         </div>
+        <button
+          class="button-enviar"
+          [disabled]="contatoForm.invalid"
+          type="submit"
+        >
+          Enviar
+        </button>
       </div>
-      <button
-        class="button-enviar"
-        [disabled]="contatoForm.invalid || enviandoEmail"
-        type="submit"
-      >
-        Enviar
-      </button>
     </div>
   </form>
 </div>
