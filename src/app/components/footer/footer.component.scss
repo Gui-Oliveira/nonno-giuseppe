@@ -2,17 +2,34 @@
 
 .footer {
   background-color: $secondary-background-color;
-  padding: 64px;
+  height: 328px;
   text-align: center;
   position: relative;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 span {
   font-family: "Poppins", sans-serif;
   color: $secondary-text-color;
   font-size: 16px;
+}
+
+.container-footer {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 40px;
+}
+
+.container-footer span {
+  margin: 0 64px;
+  padding: 0 64px;
+}
+
+small {
+  color: $secondary-text-color;
 }
 
 @media screen and (max-width: 900px) {
