@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import {MatSort, MatSortModule} from '@angular/material/sort';
+import { MatSort, MatSortable } from '@angular/material/sort';
 
 @Component({
   selector: 'app-pesquisa',
@@ -18,6 +18,8 @@ export class PesquisaComponent {
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
+
+    this.sort.sort({ id: 'sobrenome', start: 'asc' } as MatSortable);
   }
 
   applyFilter(event: Event) {
