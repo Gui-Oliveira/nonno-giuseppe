@@ -55,14 +55,14 @@
             placeholder="Ex: (00) 00000-0000"
           />
           <mat-error *ngIf="isInvalid('telefone')">
-            O nome é obrigatório e deve conter pelo menos 10 caracteres.
+            O telefone é obrigatório e deve conter pelo menos 10 caracteres.
           </mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill" class="form--input">
           <mat-label>Assunto</mat-label>
           <input matInput formControlName="assunto" type="text" />
           <mat-error *ngIf="isInvalid('assunto')">
-            O nome é obrigatório e deve conter pelo menos 2 caracteres.
+            O assunto é obrigatório e deve conter pelo menos 2 caracteres.
           </mat-error>
         </mat-form-field>
       </div>
@@ -79,7 +79,7 @@
             type="text"
           ></textarea>
           <mat-error *ngIf="isInvalid('mensagem')">
-            O nome é obrigatório e deve conter pelo menos 10 caracteres.
+            A mensagem é obrigatória e deve conter pelo menos 10 caracteres.
           </mat-error>
         </mat-form-field>
       </div>
