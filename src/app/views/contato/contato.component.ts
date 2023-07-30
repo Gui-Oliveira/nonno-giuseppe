@@ -18,7 +18,14 @@ export class ContatoComponent {
   public contatoForm: FormGroup = this.formBuilder.group({
     nome: ['', [Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
-    telefone: ['', [Validators.required, Validators.minLength(10)]],
+    telefone: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.pattern('[0-9]+'),
+      ],
+    ],
     assunto: ['', [Validators.required, Validators.minLength(2)]],
     mensagem: ['', [Validators.required, Validators.minLength(10)]],
     anexos: [''],
@@ -50,7 +57,7 @@ export class ContatoComponent {
           this.emailEnviado = true;
           this.contatoForm.reset();
           this.arquivosSelecionadosArray = [];
-          this.contatoForm.get('anexos')?.setValue(''); 
+          this.contatoForm.get('anexos')?.setValue('');
 
           Object.keys(this.contatoForm.controls).forEach((key: string) => {
             this.contatoForm.get(key)?.clearValidators();

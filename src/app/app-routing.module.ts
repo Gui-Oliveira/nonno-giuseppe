@@ -4,7 +4,6 @@ import { ContatoComponent } from './views/contato/contato.component';
 import { HomeComponent } from './views/home/home.component';
 import { PesquisaComponent } from './views/pesquisa/pesquisa.component';
 import { ServicosComponent } from './views/servicos/servicos.component';
-import { ObrigadoComponent } from './views/contato/obrigado/obrigado.component';
 
 
 const routes: Routes = [
@@ -23,10 +22,6 @@ const routes: Routes = [
   {
     path: 'contato',
     component: ContatoComponent
-  },
-  {
-    path: 'obrigado',
-    component: ObrigadoComponent
   }
 ];
 

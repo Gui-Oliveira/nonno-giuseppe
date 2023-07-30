@@ -1,4 +1,8 @@
-@import '../../../dist/scss/variables.scss';
+@import "../../../dist/scss/variables.scss";
+
+.title {
+  text-align: start;
+}
 
 .text-limit {
   max-width: 100%;
@@ -43,14 +47,14 @@ h3 {
 
   h3 {
     font-style: normal;
-    font-family: 'poppins', sans-serif;
+    font-family: "poppins", sans-serif;
     font-weight: 700;
     font-size: 32px;
     text-transform: uppercase;
     color: $primary-text-color;
 
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    margin: 21px 0 0 0;
   }
 
   .container {
@@ -62,6 +66,8 @@ h3 {
   }
 
   .text-limit {
+    margin: 21px 0 0 0;
+
     &--text-right {
       text-align: left;
       max-width: 100%;
