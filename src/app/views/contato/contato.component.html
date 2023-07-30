@@ -21,11 +21,14 @@
     class="form"
     enctype="multipart/form-data"
   >
-    <div class="row">
+    <div class="row form--row">
       <div class="col form--col">
         <mat-form-field appearance="fill" class="form--input">
           <mat-label>Nome</mat-label>
           <input matInput formControlName="nome" type="text" />
+          <mat-error *ngIf="isInvalid('nome')">
+            O nome é obrigatório e deve conter pelo menos 2 caracteres.
+          </mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill" class="form--input">
           <mat-label>E-mail</mat-label>
@@ -35,10 +38,13 @@
             type="email"
             placeholder="Ex: email@email.com"
           />
+          <mat-error *ngIf="isInvalid('email')">
+            Insira um e-mail válido.
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
-    <div class="row">
+    <div class="row form--row">
       <div class="col form--col" style="margin-top: 0">
         <mat-form-field appearance="fill" class="form--input">
           <mat-label>Telefone</mat-label>
@@ -48,10 +54,16 @@
             type="tel"
             placeholder="Ex: (00) 00000-0000"
           />
+          <mat-error *ngIf="isInvalid('telefone')">
+            O nome é obrigatório e deve conter pelo menos 10 caracteres.
+          </mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill" class="form--input">
           <mat-label>Assunto</mat-label>
           <input matInput formControlName="assunto" type="text" />
+          <mat-error *ngIf="isInvalid('assunto')">
+            O nome é obrigatório e deve conter pelo menos 2 caracteres.
+          </mat-error>
         </mat-form-field>
       </div>
     </div>
@@ -66,6 +78,9 @@
             rows="4"
             type="text"
           ></textarea>
+          <mat-error *ngIf="isInvalid('mensagem')">
+            O nome é obrigatório e deve conter pelo menos 10 caracteres.
+          </mat-error>
         </mat-form-field>
       </div>
     </div>

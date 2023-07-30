@@ -2,6 +2,7 @@ import { ContatoService } from './contato.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-contato',
@@ -16,7 +17,7 @@ export class ContatoComponent {
   emailEnviado = false;
 
   public contatoForm: FormGroup = this.formBuilder.group({
-    nome: ['', [Validators.required, Validators.minLength(3)]],
+    nome: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
     telefone: [
       '',
@@ -41,8 +42,15 @@ export class ContatoComponent {
     this.contatoForm;
   }
 
-  enviarMensagem() {
+  public enviarMensagem() {
     if (this.contatoForm.invalid) {
+      return;
+    }
+
+    if (this.arquivosSelecionadosArray.length === 0) {
+      this.showErrorMessage(
+        'É necessário ao menos um anexo para enviar a mensagem.'
+      );
       return;
     }
 
@@ -88,6 +96,25 @@ export class ContatoComponent {
           );
         },
       });
+  }
+
+  isInvalid(fieldName: string): boolean {
+    const control = this.contatoForm.get(fieldName);
+    return control?.invalid && (control?.dirty || control?.touched) || false;
+  }
+
+  getMinLength(fieldName: string): number {
+    const control = this.contatoForm.get(fieldName);
+    return control?.errors?.['minlength']?.requiredLength || 0;
+  }
+
+  private showErrorMessage(message: string) {
+    const config: MatSnackBarConfig = {
+      duration: 5000,
+      verticalPosition: 'top',
+      horizontalPosition: 'center',
+    };
+    this.snackBar.open(message, 'Fechar', config);
   }
 
   public onFileSelected(event: any) {

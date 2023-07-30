@@ -17,6 +17,10 @@
 .form {
   width: 100%;
 
+  &--row {
+    margin-bottom: 24px;
+  }
+
   &--col {
     display: flex;
     justify-content: space-around;
@@ -142,6 +146,10 @@ li {
   }
 
   .form {
+    &--row {
+      margin-bottom: 16px;
+    }
+
     &--col {
       flex-direction: column;
     }
