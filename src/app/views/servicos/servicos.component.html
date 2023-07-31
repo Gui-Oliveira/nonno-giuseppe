@@ -13,12 +13,12 @@
   <div class="col-4" *ngFor="let item of row">
     <div class="card-container">
       <mat-card class="card-container--card">
-        <mat-card-title class="card-container--card-text-title">
-          {{ item.titulo }}
-        </mat-card-title>
-        <mat-card-subtitle class="card-container--card-text-subtitle">
-          {{ item.subtitulo }}
-        </mat-card-subtitle>
+        <mat-card-header style="padding-top: 32px;">
+          <mat-card-title class="card-container--card-text-title">
+            {{ item.titulo }}
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="{{ item.img }}" class="card-container--card-img"/>
         <mat-card-content class="card-container--card-text">
           <p>{{ item.texto }}</p>
         </mat-card-content>

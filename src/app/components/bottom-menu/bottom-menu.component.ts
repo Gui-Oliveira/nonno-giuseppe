@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-bottom-menu',
@@ -9,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class BottomMenuComponent implements OnInit {
   isHandset: boolean = false;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.breakpointObserver
       .observe([Breakpoints.Handset])
       .subscribe((result) => {
         this.isHandset = result.matches;
+        this.cdr.detectChanges();
       });
   }
 }

@@ -35,8 +35,8 @@
     box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.25);
 
     width: 312px;
-    height: 320px;
-    padding-bottom: 48px;
+    height: 504px;
+    padding-bottom: 24px;
 
     display: flex;
     justify-content: center;
@@ -49,8 +49,6 @@
     font-weight: 700;
     color: $primary-text-color;
     text-align: center;
-
-    padding-top: 32px;
   }
 
   &--card-text {
@@ -60,6 +58,13 @@
     color: $secondary-text-color;
 
     text-align: center;
+  }
+
+  &--card-img {
+    width: 80%;
+    height: 50%;
+
+    padding: 8px 0;
   }
 }
 
