@@ -17,9 +17,10 @@ export class PesquisaComponent {
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-
-    this.sort.sort({ id: 'sobrenome', start: 'asc' } as MatSortable);
+    setTimeout(() => {
+      this.dataSource.sort = this.sort;
+      this.sort.sort({ id: 'sobrenome', start: 'asc' } as MatSortable);
+    });
   }
 
   applyFilter(event: Event) {

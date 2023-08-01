@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContatoComponent } from './views/contato/contato.component';
 import { HomeComponent } from './views/home/home.component';
-import { PesquisaComponent } from './views/pesquisa/pesquisa.component';
 import { ServicosComponent } from './views/servicos/servicos.component';
 
 
@@ -16,8 +15,9 @@ const routes: Routes = [
     component: ServicosComponent
   },
   {
-    path: 'pesquise',
-    component: PesquisaComponent
+    path: 'pesquisa',
+    loadChildren: () => import('./views/views.module').then(m => m.ViewsModule)
+    
   },
   {
     path: 'contato',
