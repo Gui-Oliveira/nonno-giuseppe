@@ -28,4 +28,6 @@ export class BottomMenuComponent {
         this.cdr.detectChanges();
       });
   }
+
+  handleMenuItemClick() {}
 }

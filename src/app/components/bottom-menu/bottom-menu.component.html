@@ -1,6 +1,11 @@
 <div class="menu-container" *ngIf="isHandset">
   <mat-toolbar class="bottom-menu">
-    <div class="menu-item" *ngFor="let menuItem of menuItems">
+    <div
+      class="menu-item"
+      *ngFor="let menuItem of menuItems"
+      [routerLink]="menuItem.routerLink"
+      (click)="handleMenuItemClick()"
+    >
       <mat-icon>{{ menuItem.icon }}</mat-icon>
       <span routerLink="{{ menuItem.routerLink }}">{{ menuItem.label }}</span>
     </div>
