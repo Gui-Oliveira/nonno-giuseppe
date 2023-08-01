@@ -1,10 +1,11 @@
-<div class="menu-container" *ngIf="isHandset">
+<div class="menu-container" *ngIf="mobile">
   <mat-toolbar class="bottom-menu">
     <div
       class="menu-item"
       *ngFor="let menuItem of menuItems"
       [routerLink]="menuItem.routerLink"
-      (click)="handleMenuItemClick()"
+      [ngClass]="{ 'active': botaoEmFoco(menuItem.routerLink) }"
+      (click)="respostaClick()"
     >
       <mat-icon>{{ menuItem.icon }}</mat-icon>
       <span routerLink="{{ menuItem.routerLink }}">{{ menuItem.label }}</span>

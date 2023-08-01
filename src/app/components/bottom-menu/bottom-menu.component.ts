@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-bottom-menu',
@@ -7,7 +8,7 @@ import { ChangeDetectorRef, Component } from '@angular/core';
   styleUrls: ['./bottom-menu.component.scss'],
 })
 export class BottomMenuComponent {
-  isHandset: boolean = false;
+  mobile: boolean = false;
   menuItems = [
     { icon: 'home', label: 'Home', routerLink: '' },
     { icon: 'assignment', label: 'Serviços', routerLink: '/servicos' },
@@ -15,19 +16,43 @@ export class BottomMenuComponent {
     { icon: 'phone', label: 'Contato', routerLink: '/contato' },
   ];
 
+  botaoAtivo: string = '';
+
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.breakpointObserver
       .observe([Breakpoints.Handset])
       .subscribe((result) => {
-        this.isHandset = result.matches;
+        this.mobile = result.matches;
         this.cdr.detectChanges();
       });
+
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.botaoAtivo = event.urlAfterRedirects;
+        this.setarPaginaPadrao();
+      }
+    });
   }
 
-  handleMenuItemClick() {}
+  botaoEmFoco(link: string): boolean {
+    return this.botaoAtivo === link;
+  }
+
+  setarPaginaPadrao() {
+    if (
+      !this.menuItems.some(
+        (menuItem) => this.botaoAtivo === menuItem.routerLink
+      )
+    ) {
+      this.botaoAtivo = '';
+    }
+  }
+
+  respostaClick() {}
 }

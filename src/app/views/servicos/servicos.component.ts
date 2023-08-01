@@ -12,6 +12,7 @@ export class ServicosComponent implements OnInit {
     texto: string;
     img: string;
   }[] = [];
+
   public servicosRows: {
     titulo: string;
     subtitulo: string;

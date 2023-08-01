@@ -48,7 +48,7 @@ export class ContatoComponent {
     }
 
     if (this.arquivosSelecionadosArray.length === 0) {
-      this.showErrorMessage(
+      this.mensagemErro(
         'É necessário ao menos um anexo para enviar a mensagem.'
       );
       return;
@@ -98,17 +98,17 @@ export class ContatoComponent {
       });
   }
 
-  isInvalid(fieldName: string): boolean {
+  formInvalido(fieldName: string): boolean {
     const control = this.contatoForm.get(fieldName);
     return control?.invalid && (control?.dirty || control?.touched) || false;
   }
 
-  getMinLength(fieldName: string): number {
+  tamanhoMinimo(fieldName: string): number {
     const control = this.contatoForm.get(fieldName);
     return control?.errors?.['minlength']?.requiredLength || 0;
   }
 
-  private showErrorMessage(message: string) {
+  private mensagemErro(message: string) {
     const config: MatSnackBarConfig = {
       duration: 5000,
       verticalPosition: 'top',
@@ -117,21 +117,21 @@ export class ContatoComponent {
     this.snackBar.open(message, 'Fechar', config);
   }
 
-  public onFileSelected(event: any) {
+  public arquivoSelecionado(event: any) {
     this.arquivosSelecionados = event.target.files;
     this.arquivosSelecionadosArray = Array.from(event.target.files);
   }
 
-  public deleteFile(index: number) {
+  public deletarArquivo(index: number) {
     if (this.arquivosSelecionados) {
       const updatedFiles: File[] = Array.from(this.arquivosSelecionados);
       updatedFiles.splice(index, 1);
       this.arquivosSelecionadosArray = updatedFiles;
-      this.arquivosSelecionados = this.convertArrayToFileList(updatedFiles);
+      this.arquivosSelecionados = this.arrayToFileList(updatedFiles);
     }
   }
 
-  private convertArrayToFileList(files: File[]): FileList {
+  private arrayToFileList(files: File[]): FileList {
     const dataTransfer = new DataTransfer();
     for (const file of files) {
       dataTransfer.items.add(file);

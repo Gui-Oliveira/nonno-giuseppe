@@ -12,13 +12,18 @@ export class HeaderComponent {
   menuHeader = [
     { link: '/', nome: 'Home' },
     { link: '/servicos', nome: 'Serviços' },
-    { link: '/pesquise', nome: 'Pesquise' },
+    { link: '/pesquisa', nome: 'Pesquisa' },
     { link: '/contato', nome: 'Contato' },
   ];
 
   botaoAtivo: string = '/';
 
+  ngOnInit() {
+    this.botaoAtivo = localStorage.getItem('botaoAtivo') || '/';
+  }
+
   public marcarBotao(link: string) {
     this.botaoAtivo = link;
+    localStorage.setItem('botaoAtivo', this.botaoAtivo);
   }
 }

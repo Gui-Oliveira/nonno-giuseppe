@@ -26,7 +26,7 @@
         <mat-form-field appearance="fill" class="form--input">
           <mat-label>Nome</mat-label>
           <input matInput formControlName="nome" type="text" />
-          <mat-error *ngIf="isInvalid('nome')">
+          <mat-error *ngIf="formInvalido('nome')">
             O nome é obrigatório e deve conter pelo menos 2 caracteres.
           </mat-error>
         </mat-form-field>
@@ -38,7 +38,7 @@
             type="email"
             placeholder="Ex: email@email.com"
           />
-          <mat-error *ngIf="isInvalid('email')">
+          <mat-error *ngIf="formInvalido('email')">
             Insira um e-mail válido.
           </mat-error>
         </mat-form-field>
@@ -54,14 +54,14 @@
             type="tel"
             placeholder="Ex: (00) 00000-0000"
           />
-          <mat-error *ngIf="isInvalid('telefone')">
+          <mat-error *ngIf="formInvalido('telefone')">
             O telefone é obrigatório e deve conter pelo menos 10 caracteres.
           </mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill" class="form--input">
           <mat-label>Assunto</mat-label>
           <input matInput formControlName="assunto" type="text" />
-          <mat-error *ngIf="isInvalid('assunto')">
+          <mat-error *ngIf="formInvalido('assunto')">
             O assunto é obrigatório e deve conter pelo menos 2 caracteres.
           </mat-error>
         </mat-form-field>
@@ -78,7 +78,7 @@
             rows="4"
             type="text"
           ></textarea>
-          <mat-error *ngIf="isInvalid('mensagem')">
+          <mat-error *ngIf="formInvalido('mensagem')">
             A mensagem é obrigatória e deve conter pelo menos 10 caracteres.
           </mat-error>
         </mat-form-field>
@@ -92,7 +92,7 @@
             <input
               type="file"
               accept=".pdf, .doc, .docx, .jpg, .jpeg, .png"
-              (change)="onFileSelected($event)"
+              (change)="arquivoSelecionado($event)"
               multiple
               name="anexos"
             />
@@ -107,7 +107,7 @@
               {{ file.name }}
               <mat-icon
                 fontIcon="delete"
-                (click)="deleteFile(index)"
+                (click)="deletarArquivo(index)"
               ></mat-icon>
             </li>
           </ul>
