@@ -22,11 +22,13 @@
 
 .card-row {
   display: flex;
+  justify-content: space-between;
   padding-bottom: 72px
 }
 
 .card-row-2 {
   display: flex;
+  justify-content: space-between;
 }
 
 .card-container {
