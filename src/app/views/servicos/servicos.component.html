@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<div class="row servicos-row" *ngFor="let row of servicosRows">
+<!-- <div class="row servicos-row" *ngFor="let row of servicosRows">
   <div class="col-4" *ngFor="let item of row">
     <div class="card-container">
       <mat-card class="card-container--card">
@@ -23,6 +23,187 @@
           <p>{{ item.texto }}</p>
         </mat-card-content>
       </mat-card>
+    </div>
+  </div>
+</div> -->
+
+<div class="row servicos-row">
+  <div class="col-4">
+    <div class="card-container">
+      <div class="row card-row">
+        <div class="col margin-bottom">
+          <mat-card
+            class="card-container--card"
+            style="border: 2px solid #ce2b37; margin-right: 152px"
+          >
+            <mat-card-header style="padding-top: 32px">
+              <mat-card-title class="card-container--card-text-title">
+                PESQUISAS
+              </mat-card-title>
+            </mat-card-header>
+            <img
+              mat-card-image
+              src="assets/imgs/certificato-nascita.jpg"
+              class="card-container--card-img"
+            />
+            <mat-card-content class="card-container--card-text">
+              <p>
+                Oferecemos um serviço de pesquisa ideal para quem busca
+                informações sobre antepassados, mesmo com dados não concretos,
+                como a naturalidade na Itália. Nosso objetivo é encontrar o
+                local exato de registro de nascimento para emissão do 'Estratto
+                di Nascità'. Quanto mais informações oficiais em documentos,
+                mais efetiva será a pesquisa. Aceitamos solicitações via e-mail
+                PEC, se necessário.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="col margin-bottom">
+          <mat-card
+            class="card-container--card"
+            style="border: 2px solid #f1f2f1; margin-right: 152px"
+          >
+            <mat-card-header style="padding-top: 32px">
+              <mat-card-title class="card-container--card-text-title">
+                ATUALIZAÇÃO DE DOCUMENTO (BUSCA)
+              </mat-card-title>
+            </mat-card-header>
+            <img
+              mat-card-image
+              src="assets/imgs/estratto-senza-dati.webp"
+              class="card-container--card-img"
+            />
+            <mat-card-content class="card-container--card-text">
+              <p>
+                Já tem uma cópia do documento de seu antepassado e precisa de
+                uma atualização, podemos te ajudar. O serviço de busca é o
+                serviço ideal para quem já tem uma cópia do livro de registro do
+                “atto di nascità o matrimonio” de seu antepassado ou até mesmo
+                uma via antiga do “estratto di nascità”. Efetuamos as ligações
+                aos órgãos competentes para emissão do novo documento e
+                acompanhamos a emissão para retirada do documento original.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="col margin-bottom">
+          <mat-card
+            class="card-container--card"
+            style="border: 2px solid #009246"
+          >
+            <mat-card-header style="padding-top: 32px">
+              <mat-card-title class="card-container--card-text-title">
+                APOSTILAMENTO
+              </mat-card-title>
+            </mat-card-header>
+            <img
+              mat-card-image
+              src="assets/imgs/apostille.webp"
+              class="card-container--card-img"
+            />
+            <mat-card-content class="card-container--card-text">
+              <p>
+                Em sua pasta documental, existe alguma divergência de
+                informações? Precisa corrigir algum documento no Brasil? Podemos
+                te ajudar. Todo documento italiano para ser válido em território
+                brasileiro, precisa de uma ‘certificação’, esta validação é
+                chamada de Apostilamento. O apostilamento é a autenticação da
+                assinatura do Oficial que assinou o documento e dando validade
+                para uso no exterior. Esta autenticação é sempre feita na
+                Prefeitura da Província.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div class="row card-row-2">
+        <div class="col margin-bottom">
+          <mat-card
+            class="card-container--card"
+            style="border: 2px solid #ce2b37; margin-right: 152px"
+          >
+            <mat-card-header style="padding-top: 32px">
+              <mat-card-title class="card-container--card-text-title">
+                TRANSCRIÇÃO DE ATO
+              </mat-card-title>
+            </mat-card-header>
+            <img
+              mat-card-image
+              src="assets/imgs/trascrizione.webp"
+              class="card-container--card-img"
+            />
+            <mat-card-content class="card-container--card-text">
+              <p>
+                Já teve a cidadania italiana reconhecida via judicial? Nós
+                podemos solicitar seus documentos transcritos. Após o
+                reconhecimento de cidadania, por via judicial, será necessário
+                entrar em contato com o comune, onde nasceu seu antenato, para
+                solicitar a transcrição do seu ato.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="col margin-bottom">
+          <mat-card
+            class="card-container--card"
+            style="border: 2px solid #f1f2f1; margin-right: 152px"
+          >
+            <mat-card-header style="padding-top: 32px">
+              <mat-card-title class="card-container--card-text-title">
+                MONTAGEM DA PASTA COMPLETA
+              </mat-card-title>
+            </mat-card-header>
+            <img
+              mat-card-image
+              src="assets/imgs/pasta.webp"
+              class="card-container--card-img"
+            />
+            <mat-card-content class="card-container--card-text">
+              <p>
+                Caso precise de apoio profissional para deixar sua pasta
+                documental pronta para entrar com o pedido de reconhecimento de
+                cidadania, nós podemos fazer por você. Nós realizamos as
+                pesquisas, emissões, apostilamentos e a tradução de todos os
+                documentos brasileiros aqui na Itália com nossa tradutora
+                parceira. Ao nos contatar, diga que tem interesse em montar sua
+                pasta documental, que nós temos condições especiais.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <div class="col">
+          <mat-card
+            class="card-container--card"
+            style="border: 2px solid #009246"
+          >
+            <mat-card-header style="padding-top: 32px">
+              <mat-card-title class="card-container--card-text-title">
+                PESQUISA BR
+              </mat-card-title>
+            </mat-card-header>
+            <img
+              mat-card-image
+              src="assets/imgs/br.webp"
+              class="card-container--card-img"
+            />
+            <mat-card-content class="card-container--card-text">
+              <p>
+                Podemos auxiliar nossos clientes em pesquisas nos cartórios do
+                Brasil. Por termos vasta experiência e por gostarmos de estar
+                envolvido na história de nossos clientes, podemos auxiliar nas
+                pesquisas Brasil. Temos Certificado Digital para solicitação de
+                certidões em inteiro teor nos cartórios brasileiros.
+              </p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
     </div>
   </div>
 </div>
